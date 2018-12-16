@@ -1,0 +1,35 @@
+{
+  "name": "icon-toggle",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Polymer/element-tutorial",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^1.0.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^0.7.18",
+    "iron-flex-layout": "^1.0.0",
+    "px-data-table": "2.1.7",
+    "px-tooltip": "^0.10.0",
+    "iron-iconset-svg": "^1.0.9",
+    "iron-icon": "^1.0.7",
+    "px-validation": "^0.4.0",
+    "px-dropdown": "^3.1.0",
+    "iron-overlay-behavior": "^1.8.6",
+    "iron-fit-behavior": "^1.0.0",
+    "iron-resizable-behavior": "^1.0.0",
+    "iron-a11y-keys-behavior": "^1.0.0",
+    "iron-dropdown": "^1.5.4",
+    "iron-a11y-keys": "^1.0.7",
+    "app-localize-behavior": "^0.10.2"
+  }
+}

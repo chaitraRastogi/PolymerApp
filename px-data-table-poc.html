@@ -1,0 +1,94 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/px-data-table/px-data-table.html">
+<link rel="import" href="/bower_components/px-modal/px-modal.html">
+
+<link rel="import" href="/bower_components/px-data-table/px-data-table-highlight.html">
+<link rel = "import" href = "/bower_components/iron-icons/communication-icons.html">
+ <link rel = "import" href = "/bower_components/iron-icons/iron-icons.html">
+  <link rel = "import" href = "/bower_components/iron-icons/social-icons.html">
+
+
+
+
+
+
+<dom-module id="px-data-table-demo">
+  <template>
+    <style>
+      :host {
+        font-family: sans-serif;
+      };
+	  .row-selector{
+	   --px-data-table-border-color:red;
+	   --px-data-table-header-text-color:blue;
+	   --px-data-table-cell-border-color--selected:red;
+	  }
+	  
+    </style>
+  
+    <h3>PX DATA TABLE</h3>
+    <!-- https://www.predix-ui.com/px-data-table/px-data-table/ -->
+    <px-data-table
+table-data='{{tableData}}'
+language="en" on-px-row-click="rowClick" id="assetTable" class="row-selector" hide-pagination-control selectable single-select>
+<px-data-table-column
+name='first'
+sortable
+filterable>
+
+</px-data-table-column>
+<px-data-table-column
+name='last'
+sortable
+filterable>
+</px-data-table-column>
+<px-data-table-column
+name='email'
+sortable
+filterable>
+</px-data-table-column>
+<px-data-table-column
+name='icons'
+type="html"
+sortable
+filterable>
+</px-data-table-column>
+</px-data-table>
+<px-modal
+header-text="Selected Row"
+body-text="{{demoProps}}"
+accept-text="Ok"
+reject-text="Cancel">
+</px-modal>
+
+  </template>
+  
+  <script>
+    Polymer({
+      is: "px-data-table-demo",
+	   rowClick :function(e){
+		   var modal = document.querySelector('px-modal')
+		   modal.opened =  true;
+		   this.demoProps = "First :"+e.detail.row.row.first.value+ ", Last :" +e.detail.row.row.last.value +",email :" +e.detail.row.row.email.value;
+			//document.querySelector('this.demoProps').style.color = "red";
+			console.log(this.demoProps);
+			return this.demoProps;
+	  },
+	      properties: {
+			  tableData: {
+				type: Array,
+				value: function() {
+				  return [
+					{"first":"Valentine","last":"Meyer","email":"valentinemeyer@scentric.com","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>"},
+					{"first":"Silva","last":"Alexander","email":"silvaalexander@gmail.com","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>"},
+					{"first":"Hopkins","last":"Wong","email":"hopkinswong@hotmail.com","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>"},
+					{"first": "Joe","last": "Sherman","email": "joejoe@yahoo.com","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>"},
+					{"first": "Jane","last": "Bartlett","email": "jane@scentric.com","icons":"Edit <br/> Save <br/> <iron-icon icon='star'></iron-icon>"}
+				  ];
+				}
+			  }
+	  }
+	 
+    });
+  </script>
+</dom-module>
