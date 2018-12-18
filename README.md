@@ -12,25 +12,33 @@ dependencies and to run the demo.
 
 1.  Download and install Node from [https://nodejs.org/](https://nodejs.org/). Node includes the node package manager command, `npm`.
 
-2.  Install `bower` and `polyserve`:
+2.  Install `bower` and `polymer-cli`:
 
-        npm install -g bower polyserve
+        npm install -g bower
 
 3.  Clone this repo:
 
-        https://github.com/googlecodelabs/polymer-first-elements.git
+        https://github.com/https://github.com/chaitraRastogi/PolymerApp
         
 4.  Change directory to your local repo and install dependencies with `bower`:
 
-        cd polymer-first-elements
+        cd PolymerApp
         bower install
         
-5.  To preview your element, run `polyserve` from the repo directory:
+5.  To preview your element, run `polymer serve` from the repo directory:
 
-        polyserve
+        polymer serve
         
-    Open `localhost:8080/components/icon-toggle/demo/` in your browser. (Note that the path uses `icon-toggle`—the 
-    component name listed in this element's `bower.json` file—rather than the actual directory name.) 
+    Open `http://127.0.0.1:8081/components/Polymer sample app/` in your browser.
     
-If you're wondering what `polyserve` does, see [Testing elements with local bower dependencies](https://www.polymer-project.org/1.0/docs/start/reusableelements.html#local-dependencies) 
-in the Polymer docs. 
+    Steps for running test cases
+    
+    1.Install Web component tester
+     
+     npm install -g web-component-tester
+     
+   2.Run the test cases
+   
+   $<path> wct
+    
+
