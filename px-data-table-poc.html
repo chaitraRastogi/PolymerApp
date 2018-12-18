@@ -21,7 +21,7 @@
 	  .row-selector{
 	   --px-data-table-border-color:red;
 	   --px-data-table-header-text-color:blue;
-	   --px-data-table-cell-border-color--selected:red;
+	   --px-data-table-cell-border-color--selected:green;
 	  }
 	  
     </style>
@@ -70,10 +70,13 @@ reject-text="Cancel">
 		   var modal = document.querySelector('px-modal')
 		   modal.opened =  true;
 		   this.demoProps = "First :"+e.detail.row.row.first.value+ ", Last :" +e.detail.row.row.last.value +",email :" +e.detail.row.row.email.value;
-			//document.querySelector('this.demoProps').style.color = "red";
-			console.log(this.demoProps);
+		   console.log(document.querySelector('#assetTable'));
 			return this.demoProps;
 	  },
+	   sayHello: function(greeting) {
+        var response = greeting || 'Hello World!';
+        return 'seed-element says, ' + response;
+      },
 	      properties: {
 			  tableData: {
 				type: Array,
